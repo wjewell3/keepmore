@@ -132,20 +132,8 @@ export async function POST(req: Request) {
       .update({ onboarded_at: new Date().toISOString() })
       .eq('id', merchant_id);
 
-    // Fire-and-forget report email
-    const { sendReportEmail } = await import('@/lib/send-report-email');
-    sendReportEmail({
-      to:                merchant_id, // will be replaced with email below
-      companyName:       null,
-      reportId:          savedReport.id,
-      annualizedSavings: report.annualized_savings,
-      merchantNetGain:   report.merchant_net_gain,
-      ourFeeAnnual:      report.our_fee_annual,
-      euSavings:         report.eu.savings,
-      achSavings:        report.ach.savings,
-      totalTransactions: report.total_transactions,
-      periodDays:        PERIOD_DAYS,
-    }).catch(err => console.error('[ingest] email failed:', err));
+    // TODO: Phase 2 — send report email from private layer
+    // sendReportEmail({ to, companyName, reportId, ... })
 
     return Response.json({
       success: true,
