@@ -2,14 +2,44 @@
   "compilerOptions": {
     "strict": true,
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }],
-    "paths": { "@/*": ["./*"] }
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../core/lib/savings-calculator.ts", "../core/lib/savings-calculator.test.ts", "../../private/lib/send-report-email.ts", "../../private/lib/router.ts", "../../private/lib/hyperswitch.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../core/lib/savings-calculator.ts",
+    "../core/lib/savings-calculator.test.ts",
+    "../../private/lib/send-report-email.ts",
+    "../../private/lib/router.ts",
+    "../../private/lib/hyperswitch.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,16 +1,19 @@
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
-import { aggregateSavings, StripeTransaction } from '@/lib/savings-calculator';
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_KEY!
-);
+import { aggregateSavings, StripeTransaction } from '@keepmore/core';
 
 const PERIOD_DAYS = 90;
 
+function getSupabaseClient() {
+  return createClient(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_KEY!
+  );
+}
+
 export async function POST(req: Request) {
   try {
+    const supabase = getSupabaseClient();
     const { merchant_id, stripe_key } = await req.json();
 
     if (!merchant_id || !stripe_key) {
