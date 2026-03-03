@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+packages/app/.next/
+packages/app/out/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Private (closed-source) — keep out of public repo
+private/
+
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+
+SETUP.md

@@ -1,0 +1,16 @@
+{
+  "name": "@keepmore/core",
+  "version": "0.1.0",
+  "description": "Open-source payment fee analysis and savings calculator",
+  "main": "lib/savings-calculator.js",
+  "types": "lib/savings-calculator.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "npx ts-node lib/savings-calculator.test.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "ts-node": "^10"
+  }
+}
